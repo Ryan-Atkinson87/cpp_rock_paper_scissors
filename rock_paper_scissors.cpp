@@ -52,15 +52,25 @@ int main() {
         while (valid == false) {
             //Produces a random number everytime
             computer = rand() % 3 + 1;
+            user = 0;
 
             
             //ask user for input
-            std::cout << "1) ✊\n";
-            std::cout << "2) ✋\n";
-            std::cout << "3) ✌️\n";
+            std::cout << "Rock\n";
+            std::cout << "Paper\n";
+            std::cout << "Scissors\n";
             std::cout << "\n";
             std::cout << "shoot! ";
-            std::cin >> user;
+            std::cin >> input_string;
+            if (input_string == "rock" || input_string == "Rock") {
+                user = 1;
+            }
+            else if (input_string == "paper" || input_string == "Paper") {
+                user = 2;
+            }
+            else if (input_string == "scissors" || input_string == "Scissors") {
+                user = 3;
+            }
             if (user == 1 && computer == 2) {
                 std::cout << "\n";
                 std::cout << "You chose rock!\n";
@@ -117,7 +127,8 @@ int main() {
                 valid = true;
             }
             else {
-                std::cout << "Invalid input, press 1, 2 or 3.\n";
+                std::cout << "\n";
+                std::cout << "Invalid input, enter rock, paper or scissors!\n";
             }
         }
         valid = false;
@@ -139,7 +150,7 @@ int main() {
             }
             else {
                 std::cout << "\n";
-                std::cout << " Please enter a valid input!\n";
+                std::cout << " Invalid input, enter yes or no!\n";
                 valid = false;
                 }
         }
